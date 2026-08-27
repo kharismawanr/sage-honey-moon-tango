@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #0B0D10;
+      color: #E8EAED;
+    }
+    .stage {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 48%, #12161b 0%, #0B0D10 72%);
+    }
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(158,182,196,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(158,182,196,0.055) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: 20px 15px;
+      mask-image: radial-gradient(ellipse 70% 65% at 50% 50%, #000 20%, transparent 78%);
+    }
+    .vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 90% 85% at 50% 50%, transparent 50%, rgba(11,13,16,0.55) 100%);
+      pointer-events: none;
+    }
+    .frame {
+      position: absolute;
+      inset: 28px;
+      pointer-events: none;
+    }
+    .frame .c {
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      border: 2px solid #9EB6C4;
+    }
+    .frame .tl { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+    .frame .tr { top: 0; right: 0; border-left: 0; border-bottom: 0; }
+    .frame .bl { bottom: 0; left: 0; border-right: 0; border-top: 0; }
+    .frame .br { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+    .hair {
+      position: absolute;
+      left: 88px;
+      right: 88px;
+      height: 1px;
+      background: rgba(158,182,196,0.22);
+    }
+    .hair.top { top: 56px; }
+    .hair.bot { bottom: 56px; }
+    .meta {
+      position: absolute;
+      top: 38px;
+      left: 88px;
+      right: 88px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "IBM Plex Mono", "Liberation Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: #8B939E;
+      text-transform: uppercase;
+    }
+    .meta .ok {
+      color: #7D9E8A;
+      letter-spacing: 0.18em;
+    }
+    .meta .ok::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #7D9E8A;
+      margin-right: 8px;
+      vertical-align: 0px;
+    }
+    .scene {
+      position: absolute;
+      inset: 0;
+    }
+    .face, .idcard {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.92;
+    }
+    .face { left: 72px; }
+    .idcard { right: 72px; }
+    .lockup {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -54%);
+      text-align: center;
+      width: 820px;
+    }
+    .lockup::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -48%);
+      width: 640px;
+      height: 280px;
+      background: radial-gradient(ellipse at center, rgba(11,13,16,0.78) 0%, rgba(11,13,16,0.0) 72%);
+      z-index: -1;
+    }
+    .lockup h1 {
+      font-family: "IBM Plex Sans Condensed", "Liberation Sans Narrow", sans-serif;
+      font-weight: 700;
+      font-size: 110px;
+      line-height: 0.9;
+      letter-spacing: 0.04em;
+      color: #E8EAED;
+      text-transform: none;
+    }
+    .lockup h1 span {
+      display: block;
+    }
+    .lockup .tag {
+      margin-top: 22px;
+      font-family: "IBM Plex Mono", "Liberation Mono", ui-monospace, monospace;
+      font-size: 13px;
+      letter-spacing: 0.34em;
+      color: #9EB6C4;
+      text-transform: uppercase;
+    }
+    .status {
+      position: absolute;
+      bottom: 38px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      font-family: "IBM Plex Mono", "Liberation Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: #8B939E;
+      text-transform: uppercase;
+    }
+    .status b {
+      color: #7D9E8A;
+      font-weight: 400;
+    }
+    .status i {
+      font-style: normal;
+      color: #9EB6C4;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="grid"></div>
+    <div class="scene">
+      <!-- Face scan reticle -->
+      <svg class="face" width="300" height="380" viewBox="0 0 300 380" fill="none">
+        <rect x="44" y="48" width="212" height="284" rx="4" stroke="#9EB6C4" stroke-opacity="0.4" stroke-width="1.4"/>
+        <!-- corner ticks on portrait frame -->
+        <path d="M44 78 V48 H74" stroke="#9EB6C4" stroke-width="2.8"/>
+        <path d="M226 48 H256 V78" stroke="#9EB6C4" stroke-width="2.8"/>
+        <path d="M256 302 V332 H226" stroke="#9EB6C4" stroke-width="2.8"/>
+        <path d="M74 332 H44 V302" stroke="#9EB6C4" stroke-width="2.8"/>
+        <!-- head oval -->
+        <ellipse cx="150" cy="188" rx="62" ry="78" stroke="#9EB6C4" stroke-width="2" stroke-opacity="0.95"/>
+        <!-- inner guide oval -->
+        <ellipse cx="150" cy="188" rx="48" ry="64" stroke="#9EB6C4" stroke-width="0.8" stroke-opacity="0.35" stroke-dasharray="3 5"/>
+        <!-- landmarks -->
+        <circle cx="128" cy="176" r="3.2" fill="#E8EAED" fill-opacity="0.7"/>
+        <circle cx="172" cy="176" r="3.2" fill="#E8EAED" fill-opacity="0.7"/>
+        <path d="M150 186 v22" stroke="#8B939E" stroke-width="1.2"/>
+        <path d="M134 226 C142 236, 158 236, 166 226" stroke="#8B939E" stroke-width="1.3"/>
+        <!-- crosshair -->
+        <path d="M150 96 v18 M150 266 v18 M78 188 h18 M204 188 h18" stroke="#9EB6C4" stroke-width="1.2" stroke-opacity="0.7"/>
+        <!-- scan bar -->
+        <rect x="88" y="204" width="124" height="1.5" fill="#7D9E8A" fill-opacity="0.55"/>
+        <!-- fiducials -->
+        <circle cx="150" cy="188" r="2" fill="#7D9E8A"/>
+        <text x="150" y="358" text-anchor="middle" fill="#8B939E" font-family="IBM Plex Mono, Liberation Mono, monospace" font-size="11" letter-spacing="2.4">BIOMETRIC</text>
+      </svg>
+      <!-- ID document frame -->
+      <svg class="idcard" width="320" height="380" viewBox="0 0 320 380" fill="none">
+        <rect x="28" y="108" width="264" height="168" rx="10" stroke="#9EB6C4" stroke-width="2"/>
+        <rect x="28" y="108" width="264" height="168" rx="10" fill="#9EB6C4" fill-opacity="0.04"/>
+        <!-- photo well -->
+        <rect x="48" y="132" width="72" height="92" rx="3" stroke="#E8EAED" stroke-opacity="0.55" stroke-width="1.4"/>
+        <ellipse cx="84" cy="168" rx="16" ry="20" stroke="#8B939E" stroke-width="1.2"/>
+        <path d="M64 210 C70 196, 98 196, 104 210" stroke="#8B939E" stroke-width="1.2"/>
+        <!-- data bars -->
+        <rect x="136" y="138" width="132" height="7" rx="1.5" fill="#8B939E" fill-opacity="0.55"/>
+        <rect x="136" y="154" width="96" height="5" rx="1.2" fill="#8B939E" fill-opacity="0.32"/>
+        <rect x="136" y="168" width="110" height="5" rx="1.2" fill="#8B939E" fill-opacity="0.32"/>
+        <rect x="136" y="182" width="78" height="5" rx="1.2" fill="#8B939E" fill-opacity="0.28"/>
+        <!-- MRZ-like chevrons -->
+        <g fill="#9EB6C4" fill-opacity="0.45">
+          <rect x="48" y="238" width="10" height="6" rx="0.5"/>
+          <rect x="62" y="238" width="10" height="6" rx="0.5"/>
+          <rect x="76" y="238" width="18" height="6" rx="0.5"/>
+          <rect x="98" y="238" width="10" height="6" rx="0.5"/>
+          <rect x="112" y="238" width="14" height="6" rx="0.5"/>
+          <rect x="130" y="238" width="10" height="6" rx="0.5"/>
+          <rect x="144" y="238" width="22" height="6" rx="0.5"/>
+          <rect x="170" y="238" width="10" height="6" rx="0.5"/>
+          <rect x="184" y="238" width="16" height="6" rx="0.5"/>
+          <rect x="204" y="238" width="10" height="6" rx="0.5"/>
+          <rect x="218" y="238" width="12" height="6" rx="0.5"/>
+          <rect x="234" y="238" width="20" height="6" rx="0.5"/>
+        </g>
+        <!-- pass chip -->
+        <rect x="236" y="200" width="32" height="18" rx="3" fill="#7D9E8A" fill-opacity="0.22" stroke="#7D9E8A" stroke-width="1.2"/>
+        <path d="M244 209 l5 5 11 -11" stroke="#7D9E8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="160" y="358" text-anchor="middle" fill="#8B939E" font-family="IBM Plex Mono, Liberation Mono, monospace" font-size="11" letter-spacing="2.4">DOCUMENT</text>
+      </svg>
+    </div>
+    <div class="vignette"></div>
+    <div class="lockup">
+      <h1>
+        <span>Identity</span>
+        <span>Review Ops</span>
+      </h1>
+      <div class="tag">Face + ID review</div>
+    </div>
+    <div class="hair top"></div>
+    <div class="hair bot"></div>
+    <div class="meta">
+      <span>eKYC console</span>
+      <span class="ok">PASS</span>
+    </div>
+    <div class="status">
+      <span><i>■</i><b>Match</b></span>
+      <span><i>■</i>Liveness</span>
+      <span><i>■</i>Document</span>
+    </div>
+    <div class="frame">
+      <div class="c tl"></div>
+      <div class="c tr"></div>
+      <div class="c bl"></div>
+      <div class="c br"></div>
+    </div>
+  </div>
+</body>
+</html>

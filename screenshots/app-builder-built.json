@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Identity Review Ops",
+      "hasCanvas": false,
+      "bodyTextLen": 5697,
+      "bodyTextHash": "eaab049a67961160fde9531be419fb90fcedd805fe7470ee81839d098a6a2f0c",
+      "bodyTextPrefix": "YN Your Name Work Operations About Contact EN ID Edit content MA",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Identity Review Ops",
+      "hasCanvas": false,
+      "bodyTextLen": 5644,
+      "bodyTextHash": "5867f51d82b67bddbb5bb8e28ff34abb0c30fde43ff06e75d5fa9d3334f06509",
+      "bodyTextPrefix": "YN EN ID MANUAL REVIEW · ANNOTATION OPS · ADVERSARIAL TESTING I ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
