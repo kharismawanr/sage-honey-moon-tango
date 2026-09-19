@@ -3,6 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { I18nProvider } from "@/lib/i18n";
 import { ContentProvider } from "@/lib/content-store";
+import { ThemeProvider } from "@/lib/theme";
 import appCss from "../styles.css?url";
 
 const APP_NAME = "Identity Review Ops";
@@ -16,9 +17,8 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Portfolio of a Project Manager, Data Operations — identity annotation, eKYC fraud review, and manual review operations.",
+          "Portfolio of a Project Manager, Data Operations - identity annotation, eKYC fraud review, and manual review operations.",
       },
-      { name: "theme-color", content: "#0b0d10" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
@@ -45,11 +45,13 @@ function RootDocument() {
       <body className="bg-bg text-fg">
         <PreviewHostBridge />
         <AuthProvider>
-          <I18nProvider>
-            <ContentProvider>
-              <Outlet />
-            </ContentProvider>
-          </I18nProvider>
+          <ThemeProvider>
+            <I18nProvider>
+              <ContentProvider>
+                <Outlet />
+              </ContentProvider>
+            </I18nProvider>
+          </ThemeProvider>
         </AuthProvider>
         <Scripts />
       </body>

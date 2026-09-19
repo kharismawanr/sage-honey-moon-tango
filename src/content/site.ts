@@ -61,7 +61,7 @@ export const site = {
     email: "kharismawan.ramadhan@gmail.com",
     phone: "+6281380927827",
     phoneDisplay: "+62 813-8092-7827",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/kharismawan-ramadhan-314346159/",
     education: {
       degree: {
         en: "B.Eng. Industrial Engineering",

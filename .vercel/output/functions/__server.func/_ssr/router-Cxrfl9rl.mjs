@@ -1,9 +1,9 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].mjs";
-import { f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent, v as useRouter, y as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
-import { r as TriangleAlert } from "../_libs/lucide-react.mjs";
+import { b as require_jsx_runtime, f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent, y as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
+import { o as TriangleAlert } from "../_libs/lucide-react.mjs";
 import { a as union, i as string, n as number, r as object, t as literal } from "../_libs/zod.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-g3_3KJzQ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Cxrfl9rl.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -321,8 +321,8 @@ function useI18n() {
 }
 var site = {
 	profile: {
-		name: "Your Name",
-		initials: "YN",
+		name: "Kharismawan Ramadhan",
+		initials: "KR",
 		title: {
 			en: "Project Manager, Data Operations",
 			id: "Project Manager, Data Operations"
@@ -337,8 +337,17 @@ var site = {
 			en: "Indonesia",
 			id: "Indonesia"
 		},
-		email: "you@example.com",
-		linkedin: "https://www.linkedin.com/",
+		email: "kharismawan.ramadhan@gmail.com",
+		phone: "+6281380927827",
+		phoneDisplay: "+62 813-8092-7827",
+		linkedin: "",
+		education: {
+			degree: {
+				en: "B.Eng. Industrial Engineering",
+				id: "S1 Teknik Industri"
+			},
+			school: "Universitas Gunadarma"
+		},
 		availability: {
 			en: "Open to operations, identity, and AI-ops conversations",
 			id: "Terbuka untuk percakapan operations, identity, dan AI-ops"
@@ -352,6 +361,10 @@ var site = {
 		ops: {
 			en: "Operations",
 			id: "Operasional"
+		},
+		lab: {
+			en: "Lab",
+			id: "Lab"
 		},
 		about: {
 			en: "About",
@@ -828,6 +841,32 @@ var site = {
 				"Payroll"
 			],
 			status: "ops"
+		},
+		{
+			id: "expense",
+			title: {
+				en: "Family expense tracker",
+				id: "Expense tracker keluarga"
+			},
+			category: {
+				en: "Home lab",
+				id: "Home lab"
+			},
+			summary: {
+				en: "Tracks my spend, my wife's, and shared household costs. Hermes Agent sits on WhatsApp — log an expense by chat, no need to open the app.",
+				id: "Mencatat pengeluaran saya, istri, dan pengeluaran bersama. Hermes Agent di WhatsApp — catat lewat chat, tanpa buka aplikasinya."
+			},
+			points: [{
+				en: "WhatsApp → Hermes Agent → home server, so capture happens in the conversation you already use.",
+				id: "WhatsApp → Hermes Agent → home server, jadi pencatatan terjadi di percakapan yang sudah dipakai."
+			}],
+			tags: [
+				"n8n",
+				"Hermes",
+				"WhatsApp",
+				"Self-hosted"
+			],
+			status: "ops"
 		}
 	],
 	toolsTitle: {
@@ -842,7 +881,10 @@ var site = {
 		"Hermes",
 		"Coupa",
 		"Annotation platforms",
-		"Payroll platforms"
+		"Payroll platforms",
+		"n8n",
+		"Immich",
+		"Nextcloud"
 	],
 	opsCards: [
 		{
@@ -890,17 +932,82 @@ var site = {
 			}
 		}
 	],
+	labTitle: {
+		en: "Home lab",
+		id: "Home lab"
+	},
+	labLead: {
+		en: "Off hours I tinker with AI agents and a self-hosted stack — the same ops instinct, pointed at the house.",
+		id: "Di luar jam kerja saya mengulik AI agent dan stack self-hosted — insting ops yang sama, diarahkan ke rumah."
+	},
+	labItems: [
+		{
+			id: "n8n",
+			title: {
+				en: "n8n",
+				id: "n8n"
+			},
+			body: {
+				en: "Workflow automation for the services on the home server.",
+				id: "Otomasi workflow untuk layanan di home server."
+			}
+		},
+		{
+			id: "hermes",
+			title: {
+				en: "Hermes Agent",
+				id: "Hermes Agent"
+			},
+			body: {
+				en: "Problem-solving partner and reminder system — also the WhatsApp front door for logging expenses.",
+				id: "Teman problem solving dan pengingat — sekaligus pintu WhatsApp untuk mencatat pengeluaran."
+			}
+		},
+		{
+			id: "immich",
+			title: {
+				en: "Immich",
+				id: "Immich"
+			},
+			body: {
+				en: "Self-hosted photo backup.",
+				id: "Backup foto self-hosted."
+			}
+		},
+		{
+			id: "nextcloud",
+			title: {
+				en: "Nextcloud",
+				id: "Nextcloud"
+			},
+			body: {
+				en: "Backup for important files.",
+				id: "Backup file-file penting."
+			}
+		},
+		{
+			id: "expense",
+			title: {
+				en: "Expense tracker",
+				id: "Expense tracker"
+			},
+			body: {
+				en: "Personal, spouse, and shared spend — input via WhatsApp chat to Hermes, written to the home server.",
+				id: "Pengeluaran pribadi, istri, dan bersama — input lewat chat WA ke Hermes, tersimpan di home server."
+			}
+		}
+	],
+	educationTitle: {
+		en: "Education",
+		id: "Pendidikan"
+	},
 	contactTitle: {
 		en: "Contact",
 		id: "Kontak"
 	},
 	contactLead: {
-		en: "For annotation programs, manual review operations, or identity-fraud testing.",
-		id: "Untuk program anotasi, operasional manual review, atau pengujian fraud identitas."
-	},
-	contactNote: {
-		en: "Replace the email and LinkedIn in Edit content (or in src/content/site.ts) with your real details.",
-		id: "Ganti email dan LinkedIn di Edit konten (atau di src/content/site.ts) dengan data asli Anda."
+		en: "For annotation programs, manual review operations, identity-fraud testing, or a note about the lab.",
+		id: "Untuk program anotasi, operasional manual review, pengujian fraud identitas, atau obrolan soal lab."
 	},
 	footer: {
 		mark: {
@@ -973,7 +1080,7 @@ var site = {
 		}
 	]
 };
-var STORAGE_KEY = "portfolio-content-overlay";
+var STORAGE_KEY = "portfolio-content-overlay-v2";
 var ContentContext = (0, import_react.createContext)(null);
 function cloneSite() {
 	return structuredClone(site);
@@ -1038,7 +1145,46 @@ function useContent() {
 	if (!ctx) throw new Error("useContent must be used within ContentProvider");
 	return ctx;
 }
-var styles_default = "/assets/styles-vp1LYMPV.css";
+var ThemeContext = (0, import_react.createContext)(null);
+function ThemeProvider({ children }) {
+	const [theme, setThemeState] = (0, import_react.useState)(() => {
+		if (typeof window === "undefined") return "dark";
+		const saved = localStorage.getItem("theme");
+		if (saved === "dark" || saved === "light") return saved;
+		return "dark";
+	});
+	(0, import_react.useEffect)(() => {
+		const root = document.documentElement;
+		if (theme === "dark") {
+			root.classList.add("dark");
+			root.setAttribute("data-theme", "dark");
+		} else {
+			root.classList.remove("dark");
+			root.setAttribute("data-theme", "light");
+		}
+		localStorage.setItem("theme", theme);
+	}, [theme]);
+	function toggleTheme() {
+		setThemeState((prev) => prev === "dark" ? "light" : "dark");
+	}
+	function setTheme(t) {
+		setThemeState(t);
+	}
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeContext.Provider, {
+		value: {
+			theme,
+			toggleTheme,
+			setTheme
+		},
+		children
+	});
+}
+function useTheme() {
+	const ctx = (0, import_react.useContext)(ThemeContext);
+	if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
+	return ctx;
+}
+var styles_default = "/assets/styles-UXfvqS5-.css";
 var APP_NAME = "Identity Review Ops";
 var Route$2 = createRootRoute({
 	head: () => ({
@@ -1051,11 +1197,7 @@ var Route$2 = createRootRoute({
 			{ title: APP_NAME },
 			{
 				name: "description",
-				content: "Portfolio of a Project Manager, Data Operations — identity annotation, eKYC fraud review, and manual review operations."
-			},
-			{
-				name: "theme-color",
-				content: "#0b0d10"
+				content: "Portfolio of a Project Manager, Data Operations - identity annotation, eKYC fraud review, and manual review operations."
 			}
 		],
 		links: [
@@ -1102,15 +1244,15 @@ function RootDocument() {
 			className: "bg-bg text-fg",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PreviewHostBridge, {}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(AuthProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(I18nProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ContentProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}) }) }) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(AuthProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(I18nProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ContentProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}) }) }) }) }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})
 			]
 		})]
 	});
 }
-var $$splitComponentImporter$1 = () => import("./routes-r0jyu9Px.mjs");
+var $$splitComponentImporter$1 = () => import("./routes-CU0X-IEb.mjs");
 var Route$1 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./studio-Bq7fZdZF.mjs");
+var $$splitComponentImporter = () => import("./studio-Brc8sXHO.mjs");
 var Route = createFileRoute("/studio")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var rootRouteChildren = {
 	IndexRoute: Route$1.update({
@@ -1133,4 +1275,4 @@ function getRouter() {
 	});
 }
 //#endregion
-export { useI18n as i, useContent as n, site as r, router_exports as t };
+export { useI18n as a, site as i, useTheme as n, useContent as r, router_exports as t };

@@ -4,15 +4,15 @@ import type { ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 font-medium transition-[opacity,transform,background-color,box-shadow] duration-150 ease-out active:not-disabled:scale-[0.96] disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
+  "inline-flex items-center justify-center gap-2 font-medium transition-[opacity,transform,background-color,box-shadow,color] duration-150 ease-out active:not-disabled:scale-[0.96] disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
   {
     variants: {
       variant: {
         primary:
-          "bg-accent text-accent-fg shadow-[var(--shadow-border)] hover:opacity-90",
+          "bg-accent text-accent-fg shadow-sm shadow-blue-500/25 hover:bg-blue-700",
         secondary:
-          "bg-transparent text-fg shadow-[var(--shadow-border)] hover:shadow-[var(--shadow-border-hover)] hover:bg-surface-2",
-        ghost: "bg-transparent text-muted hover:text-fg hover:bg-surface-2",
+          "bg-surface text-fg shadow-[var(--shadow-border)] hover:shadow-[var(--shadow-border-hover)] hover:bg-surface-2 hover:text-accent",
+        ghost: "bg-transparent text-muted hover:text-accent hover:bg-surface-2",
       },
       size: {
         md: "h-11 px-4 text-sm rounded-[var(--radius-sm)]",
